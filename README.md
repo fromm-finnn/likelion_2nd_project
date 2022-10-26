@@ -1,14 +1,14 @@
 <h3>다운 + 열기</h3>   
-1. vscode에서 본인이 다운받을 폴더 지정후 터미널 열어서 <code>git clone https://github.com/fromm-finnn/likelion_2nd_project</code> 입력  
-2. <b>리액트 라우터 설치</b> -> 터미널에 <code>npm install react-router-dom --save</code> 입력  
-3. 터미널에 <code>npm start</code> 입력   
+1. vscode에서 본인이 다운받을 폴더 지정후 터미널 열어서 <code>git clone https://github.com/fromm-finnn/likelion_2nd_project</code> 입력<br/> 
+2. <b>리액트 라우터 설치</b> -> 터미널에 <code>npm install react-router-dom --save</code> 입력<br/> 
+3. 터미널에 <code>npm start</code> 입력<br/> 
 <hr/>
 <h3>깃허브에 올릴때</h3>
-1. add 하기 전에 pull 먼저하기  
+1. add 하기 전에 pull 먼저하기<br/>   
 2. pull 하고나서 add-commit 안될 경우 높은확률로 충돌 -> 원인 파일 찾아서 스택제거 or 수정한게 무조건 맞으면($ git push --force)  
-(https://planbs.tistory.com/entry/Git-Pull%EC%97%90%EC%84%9C-%EC%B6%A9%EB%8F%8C-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0)
+(https://planbs.tistory.com/entry/Git-Pull%EC%97%90%EC%84%9C-%EC%B6%A9%EB%8F%8C-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0)<br/> 
 
-그외 명령어
+####그외 명령어
 - **git init** : 현재 디렉토리를 Git이 관리하는 프로젝트 디렉토리(=working directory)로 설정하고 그 안에 레포지토리(.git 디렉토리) 생성
 - **git config** **user.name 'codeit'** : 현재 사용자의 아이디를 'codeit'으로 설정(커밋할 때 필요한 정보)
 - **git config user.email 'teacher@codeit.kr'** : 현재 사용자의 이메일 주소를 'teacher@codeit.kr'로 설정(커밋할 때 필요한 정보)
