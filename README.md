@@ -6,9 +6,9 @@
 <h3>깃허브에 올릴때</h3>
 1. add 하기 전에 pull 먼저하기<br/>   
 2. pull 하고나서 add-commit 안될 경우 높은확률로 충돌 -> 원인 파일 찾아서 스택제거 or 수정한게 무조건 맞으면($ git push --force)  
-(https://planbs.tistory.com/entry/Git-Pull%EC%97%90%EC%84%9C-%EC%B6%A9%EB%8F%8C-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0)<br/> 
+(https://planbs.tistory.com/entry/Git-Pull%EC%97%90%EC%84%9C-%EC%B6%A9%EB%8F%8C-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0)<br/><br/>  
 
-####그외 명령어
+<h4>그외 명령어</h4>
 - **git init** : 현재 디렉토리를 Git이 관리하는 프로젝트 디렉토리(=working directory)로 설정하고 그 안에 레포지토리(.git 디렉토리) 생성
 - **git config** **user.name 'codeit'** : 현재 사용자의 아이디를 'codeit'으로 설정(커밋할 때 필요한 정보)
 - **git config user.email 'teacher@codeit.kr'** : 현재 사용자의 이메일 주소를 'teacher@codeit.kr'로 설정(커밋할 때 필요한 정보)
