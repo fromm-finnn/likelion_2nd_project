@@ -1,0 +1,21 @@
+.home-banner-card{
+  margin-bottom: 8px;
+  background : linear-gradient(315.35deg, #225A21 13.45%, #326A31 45.29%, #528651 90.2%);
+  width: 32%;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.board-title{
+  cursor: pointer;
+}
+
+.banner-img{
+  width: 34px;
+  margin: 14px 0px 6px 0px;
+}
+
+.board-content{
+  cursor: pointer;
+  width: fit-content;
+}

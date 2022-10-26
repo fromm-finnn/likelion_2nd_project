@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+
+
+@font-face {
+  font-family: "Pretendatd-Black";
+  src: url("./fonts/Pretendard-Black.ttf");
+}
+
+@font-face {
+  font-family: "Pretendatd-Bold";
+  src: url("./fonts/Pretendard-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Pretendatd-ExtraBold";
+  src: url("./fonts/Pretendard-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Pretendatd-ExtraLight";
+  src: url("./fonts/Pretendard-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "Pretendatd-Light";
+  src: url("./fonts/Pretendard-Light.ttf");
+}
+
+@font-face {
+  font-family: "Pretendatd-Medium";
+  src: url("./fonts/Pretendard-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Pretendatd-Regular";
+  src: url("./fonts/Pretendard-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Pretendatd-Semibold";
+  src: url("./fonts/Pretendard-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Pretendatd-Thin";
+  src: url("./fonts/Pretendard-Thin.ttf");
+}
