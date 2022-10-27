@@ -2,7 +2,7 @@ import React from "react";
 import HomeBannerCard from "./HomeBannerCard";
 import HomeBoardCard from "./HomeBoardCard";
 import "../../css/Home.css";
-import Search from "./Search";
+import MainSearchIcon from "../../images/main-search-icon.png";
 
 function Home() {
   return (
@@ -18,12 +18,14 @@ function Home() {
             <button className="btn-b">봉룡</button>
           </div>
         </div>
+        <div className="home-search">
         <input
-          className="home-search"
+          className="home-search-input"
           type="text"
           placeholder="검색어를 입력하세요"
         />
-
+        <img className="home-search-icon" src={MainSearchIcon} />
+        </div>
         <div className="home-middle">
           <div className="upper-card">
             <HomeBoardCard />

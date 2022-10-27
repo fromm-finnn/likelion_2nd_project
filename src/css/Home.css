@@ -64,8 +64,10 @@
   font-weight: 400px;
   cursor: pointer;
 }
-
 .home-search {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   width: 98%;
   height: 36px;
   background: rgba(255, 255, 255, 0.97);
@@ -73,6 +75,23 @@
   border-radius: 5px;
   padding-left: 10px;
   margin-bottom: 12px;
+}
+
+.home-search-input {
+  width: 90%;
+  font-size: 15px;
+  font-weight: 500;
+  backface-visibility: hidden;
+  border-style: none;
+}
+
+.home-search-input:focus{
+  outline: none;
+}
+
+.home-search-icon{
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .home-middle {

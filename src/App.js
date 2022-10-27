@@ -6,25 +6,26 @@ import Board2 from "./components/Board2";
 import Chat from "./components/Chat";
 import Home from "./components/home/Home";
 import SignIn from "./components/signin/SignIn";
-import Login from './components/signin/Login';
-import SignUp from './components/signin/SignUp';
-import MyPage from './components/mypage/MyPage';
+import Login from "./components/signin/Login";
+import SignUp from "./components/signin/SignUp";
+import MyPage from "./components/mypage/MyPage";
+import Header from './components/Header';
 
-//css 
+
+//css
 import "./App.css";
-
-
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Header/>
         <Routes>
           <Route path="/" element={<Main />}></Route>
-          <Route path="/signin" element={<SignIn/>}></Route>
-          <Route path="/login" element={<Login/>}></Route>
-          <Route path="/signup" element={<SignUp/>}></Route>
-          <Route path="/mypage" element={<MyPage/>}></Route>
+          <Route path="/signin" element={<SignIn />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/mypage" element={<MyPage />}></Route>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/board1" element={<Board1 />}></Route>
           <Route path="/board2" element={<Board2 />}></Route>
