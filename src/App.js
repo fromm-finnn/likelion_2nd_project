@@ -8,6 +8,7 @@ import Home from "./components/home/Home";
 import SignIn from "./components/signin/SignIn";
 import Login from './components/signin/Login';
 import SignUp from './components/signin/SignUp';
+import MyPage from './components/mypage/MyPage';
 
 //css 
 import "./App.css";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/signin" element={<SignIn/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/signup" element={<SignUp/>}></Route>
+          <Route path="/mypage" element={<MyPage/>}></Route>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/board1" element={<Board1 />}></Route>
           <Route path="/board2" element={<Board2 />}></Route>

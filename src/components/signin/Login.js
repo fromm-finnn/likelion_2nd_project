@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../css/Login.css"
+import "../../css/Login.css";
 
 function Login() {
   return (
@@ -16,15 +16,16 @@ function Login() {
         </div>
 
         <div className="select-btn">
-          <span>아이디 찾기</span>
-          <span>비밀번호 찾기</span>
-          <span>회원가입</span>
+          <span className="find-id-btn">아이디 찾기</span>
+          <span className="find-pw-btn">비밀번호 찾기</span>
+          <Link to="/signup" style={{ textDecoration: 'none', color: "#636363" }}>
+            <span className="login-to-signup-btn">회원가입</span>
+          </Link>
         </div>
-        <Link to="/signup">
-          <div>
-            <button className="login-btn">로그인</button>
-          </div>
-        </Link>
+
+        <div>
+          <button className="login-btn">로그인</button>
+        </div>
       </div>
     </>
   );
