@@ -1,20 +1,47 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/Menu.css";
 import menu_close from "../images/menu-close.png";
+import ginkgo from "../images/ginkgo-leaf.png";
 
-function Menu(props){
+function Menu(props) {
+  const navigate = useNavigate();
   const { open, close } = props;
 
   return (
     <div className={open ? "openMenu menu" : "menu"}>
       {open ? (
         <section>
-          <section className="menu-userbox">
+          <section className="menu-logo-box">
+            <img
+              onClick={() => navigate("/")}
+              className="menu-logo"
+              alt="logo"
+              src={ginkgo}
+            ></img>
             <img className="menu-close" onClick={close} src={menu_close}></img>
           </section>
+          <ul className="menu-list">
+            <li className="list-name">자유게시판</li>
+            <li className="list-name">정보게시판</li>
+            <li className="list-name">건의게시판</li>
+            <li className="list-name">공구게시판</li>
+            <li className="list-name">나눔게시판</li>
+            <li className="list-line">-------------------</li>
+            <li className="list-name">공지사항</li>
+            <li className="list-name">기숙사 식당</li>
+            <li className="list-name">기숙사 정보</li>
+            <li className="list-line">-------------------</li>
+            <li onClick={() => navigate("/mypage")} className="list-name">
+              마이페이지
+            </li>
+            <li className="list-line">-------------------</li>
+            <li className="list-name">봉룡학사 홈페이지</li>
+            <li className="list-name">명륜학사 홈페이지</li>
+          </ul>
         </section>
       ) : null}
     </div>
   );
-};
+}
 export default Menu;

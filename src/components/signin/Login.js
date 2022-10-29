@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../css/Login.css";
+import ginkgo from "../../images/ginkgo-leaf.png"
 
 function Login() {
   return (
@@ -8,7 +9,7 @@ function Login() {
       <div className="login">
         <h1>성균관대학교 기숙사 커뮤니티</h1>
 
-        <img className="logo" alt="logo" src="" />
+        <img className="logo" alt="logo" src={ginkgo} />
 
         <div className="login-input">
           <input className="login-id" type="text" placeholder="아이디" />

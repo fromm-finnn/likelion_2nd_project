@@ -1,11 +1,12 @@
 import React from "react";
 import '../../css/HomeBoardCard.css'
 
-function HomeBoardCard() {
+function HomeBoardCard(props) {
   return (
     <div className="home-board-card">
       <div className="board-title-box">
-        <p className="board-title">게시판이름</p>
+        <p className="board-title">{props.title}</p>
+        <p className="board-subtitle">{props.subtitle}</p>
         <p className="plus-btn">+</p>
       </div>
       <div className="board-content-box">

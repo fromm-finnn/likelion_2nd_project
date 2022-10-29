@@ -16,8 +16,8 @@
 }
 
 .menu > section {
-  flex-flow: column wrap;
-  justify-content: flex-start;
+  /* flex-flow: column wrap;
+  justify-content: flex-start; */
   width: 50%;
   max-width: 180px;
   background-color: #ffffff;
@@ -26,11 +26,13 @@
   height: 100%;
   border-radius: 0px 10px 0px 0px;
 }
+
 .menu.openMenu {
   display: flex;
   align-items: left;
   animation: modal-bg-show 0.3s;
 }
+
 @keyframes modal-show {
   from {
     opacity: 0;
@@ -50,17 +52,39 @@
   }
 }
 
-.menu-userbox {
+.menu-logo-box {
   width: 100%;
   height: 10%;
-  max-height: 200px;
   background: #326a31;
   border-radius: 0px 10px 0px 0px;
 }
+
+.menu-logo{
+  margin-top: 5px;
+  object-fit:contain;
+  width: 50%;
+  height: 75%;
+  cursor: pointer;
+}
+
 .menu-close {
   cursor: pointer;
   float: right;
   margin: 10px;
   width: 8px;
   height: 8px;
+}
+
+.menu-list {
+  list-style-type: none;
+  text-align: left;
+  padding: 15px 0 0 24px;
+}
+
+.menu-list>li{
+  margin-bottom: 16px;
+}
+
+.list-name{
+  cursor: pointer;
 }

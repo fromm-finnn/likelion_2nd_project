@@ -37,6 +37,9 @@
   }
 }
 
+input:focus{
+  outline: none;
+} 
 
 @font-face {
   font-family: "Pretendatd-Black";

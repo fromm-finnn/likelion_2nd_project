@@ -22,6 +22,11 @@
   height: 48px;
 }
 
+.header-logo{
+  cursor: pointer;
+  width: 50px;
+}
+
 .header-menu {
   cursor: pointer;
   width: 28px;

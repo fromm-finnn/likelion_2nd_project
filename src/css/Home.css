@@ -85,10 +85,6 @@
   border-style: none;
 }
 
-.home-search-input:focus{
-  outline: none;
-}
-
 .home-search-icon{
   margin-right: 10px;
   cursor: pointer;

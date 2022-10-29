@@ -1,11 +1,13 @@
 import React from "react";
-import '../../css/HomeBannerCard.css'
+import "../../css/HomeBannerCard.css";
 
-function HomeBannerCard() {
+function HomeBannerCard(props) {
   return (
     <div className="home-banner-card">
-      <img className="banner-img" alt="bannaerimg" src=""></img>
-      <p>배너이름</p>
+      <div className="img-box">
+        <img className="banner-img" alt="bannaerimg" src={props.img}></img>
+      </div>
+      <p className="baaner-title">{props.title}</p>
     </div>
   );
 }
