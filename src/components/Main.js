@@ -14,11 +14,23 @@ function Main() {
         <Link to="/mypage">
           <p>MyPage</p>
         </Link>
-        <Link to="/board1">
-          <p>Board1</p>
+        <Link to="/freeboard">
+          <p>FreeBoard</p>
         </Link>
-        <Link to="/board2">
-          <p>Board2</p>
+        <Link to="/infoboard">
+          <p>InfoBoard</p>
+        </Link>
+        <Link to="/suggboard">
+          <p>SuggBoard</p>
+        </Link>
+        <Link to="/groupboard">
+          <p>GroupBoard</p>
+        </Link>
+        <Link to="/shareboard">
+          <p>ShareBoard</p>
+        </Link>
+        <Link to="/roommatefind">
+          <p>RoommateFind</p>
         </Link>
         <Link to="/chat">
           <p>Chat</p>
