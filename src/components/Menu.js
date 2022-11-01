@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../css/Menu.css";
 import menu_close from "../images/menu-close.png";
 import ginkgo from "../images/ginkgo-leaf.png";
+import line from "../images/line.svg"
 
 function Menu(props) {
   const navigate = useNavigate();
@@ -27,15 +28,15 @@ function Menu(props) {
             <li className="list-name">건의게시판</li>
             <li className="list-name">공구게시판</li>
             <li className="list-name">나눔게시판</li>
-            <li className="list-line">-------------------</li>
+            <img className="list-line" alt="listline" src={line}/>
             <li className="list-name">공지사항</li>
             <li className="list-name">기숙사 식당</li>
             <li className="list-name">기숙사 정보</li>
-            <li className="list-line">-------------------</li>
+            <img className="list-line" alt="listline" src={line}/>
             <li onClick={() => navigate("/mypage")} className="list-name">
               마이페이지
             </li>
-            <li className="list-line">-------------------</li>
+            <img className="list-line" alt="listline" src={line}/>
             <li className="list-name">봉룡학사 홈페이지</li>
             <li className="list-name">명륜학사 홈페이지</li>
           </ul>
