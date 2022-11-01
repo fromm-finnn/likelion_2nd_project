@@ -1,13 +1,13 @@
 import React from "react";
 
-function Board2() {
+function InfoBoard() {
   return (
     <>
       <div className="Board2">
-        <p>게시판2 작업공간</p>
+        <p>정보게시판 작업공간</p>
       </div>
     </>
   );
 }
 
-export default Board2;
+export default InfoBoard;

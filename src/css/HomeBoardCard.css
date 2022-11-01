@@ -71,6 +71,7 @@
 .board-content-box.dorm-list{
   display: flex;
   flex-direction: row;
+  overflow-x: auto; 
 }
 
 .plus-btn {

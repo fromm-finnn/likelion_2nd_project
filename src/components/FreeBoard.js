@@ -1,13 +1,13 @@
 import React from "react";
 
-function Board1() {
+function FreeBoard() {
   return (
     <>
       <div className="Board1">
-        <p>게시판1 작업공간</p>
+        <p>자유게시판 작업공간</p>
       </div>
     </>
   );
 }
 
-export default Board1;
+export default FreeBoard;
