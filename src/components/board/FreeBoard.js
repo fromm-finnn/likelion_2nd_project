@@ -26,7 +26,7 @@ function FreeBoard() {
         <div className="board-middle">
             <BoardList/>
         </div>
-        
+
         <div className="board-bottom">
         </div>
       </div>
