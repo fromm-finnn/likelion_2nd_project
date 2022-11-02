@@ -14,6 +14,10 @@
   font-family: "Pretendatd-Regular";
 }
 
+.home-board-card.dorm-list{
+ height: 185px; 
+}
+
 .board-title-box {
   display: flex;
   flex-direction: row;
@@ -47,9 +51,11 @@
 }
 
 .board-content-box {
+  margin: 0;
   padding-left: 5%;
   width: 90%;
   text-align: left;
+  list-style-type: none;
 }
 
 .board-content {
@@ -59,6 +65,13 @@
   font-weight: 400;
   font-size: 11px;
   color: #323232;
+  cursor: pointer;
+}
+
+.board-content-box.dorm-list{
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; 
 }
 
 .plus-btn {

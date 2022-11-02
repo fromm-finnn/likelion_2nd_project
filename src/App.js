@@ -13,8 +13,8 @@ import SignIn from "./components/signin/SignIn";
 import Login from "./components/signin/Login";
 import SignUp from "./components/signin/SignUp";
 import MyPage from "./components/mypage/MyPage";
+import MyPageEdit from "./components/mypage/MyPageEdit";
 import Header from './components/Header';
-
 
 //css
 import "./App.css";
@@ -30,6 +30,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/mypage" element={<MyPage />}></Route>
+          <Route pathe="/mypageedit" element={<MyPageEdit />}></Route>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/freeboard" element={<Board1 />}></Route>
           <Route path="/infoboard" element={<Board2 />}></Route>
