@@ -1,12 +1,12 @@
 //routing
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./components/Main";
-import Board1 from "./components/FreeBoard";
-import Board2 from "./components/InfoBoard";
-import Board3 from "./components/SuggBoard";
-import Board4 from "./components/GroupBoard";
-import Board5 from "./components/ShareBoard";
-import Board6 from "./components/RoommateFind";
+import Board1 from "./components/board/FreeBoard";
+import Board2 from "./components/board/InfoBoard";
+import Board3 from "./components/board/SuggBoard";
+import Board4 from "./components/board/GroupBoard";
+import Board5 from "./components/board/ShareBoard";
+import Board6 from "./components/board/RoommateFind";
 import Chat from "./components/Chat";
 import Home from "./components/home/Home";
 import SignIn from "./components/signin/SignIn";
