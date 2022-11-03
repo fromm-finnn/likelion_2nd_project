@@ -9,16 +9,16 @@ import suggestion_board_img from "../../images/suggestion-board.svg";
 import together_board_img from "../../images/together-board.svg";
 import information_board_img from "../../images/information-board.svg";
 import free_board_img from "../../images/free-board.svg";
-import e_house_img from "../../images/e-house.png"
-import g_house_img from "../../images/g-house.png"
-import k_house_img from "../../images/k-house.png"
-import c_house_img from "../../images/c-house.png"
+import e_house_img from "../../images/e-house.png";
+import g_house_img from "../../images/g-house.png";
+import k_house_img from "../../images/k-house.png";
+import c_house_img from "../../images/c-house.png";
 
 function Home() {
-  const url_e = "https://dorm.skku.edu/dorm_seoul/lifeguide/e_house_living.jsp"
-  const url_g = "https://dorm.skku.edu/dorm_seoul/lifeguide/g_house_living.jsp"
-  const url_k = "https://dorm.skku.edu/dorm_seoul/lifeguide/k_house_living.jsp"
-  const url_c = "https://dorm.skku.edu/dorm_seoul/lifeguide/c_house_living.jsp"
+  const url_e = "https://dorm.skku.edu/dorm_seoul/lifeguide/e_house_living.jsp";
+  const url_g = "https://dorm.skku.edu/dorm_seoul/lifeguide/g_house_living.jsp";
+  const url_k = "https://dorm.skku.edu/dorm_seoul/lifeguide/k_house_living.jsp";
+  const url_c = "https://dorm.skku.edu/dorm_seoul/lifeguide/c_house_living.jsp";
 
   return (
     <>
@@ -51,12 +51,12 @@ function Home() {
         </div>
 
         <div className="home-banner">
-          <HomeBannerCard title="자유게시판" img={free_board_img} />
-          <HomeBannerCard title="정보게시판" img={information_board_img} />
-          <HomeBannerCard title="건의게시판" img={suggestion_board_img} />
-          <HomeBannerCard title="공구게시판" img={together_board_img} />
-          <HomeBannerCard title="나눔게시판" img={share_board_img} />
-          <HomeBannerCard title="룸메 찾아요" img={find_roommates_img} />
+          <HomeBannerCard title="자유게시판" img={free_board_img} link="/freeboard"/>
+          <HomeBannerCard title="정보게시판" img={information_board_img} link="/infoboard"/>
+          <HomeBannerCard title="건의게시판" img={suggestion_board_img} link="/suggboard"/>
+          <HomeBannerCard title="공구게시판" img={together_board_img} link="/groupboard"/>
+          <HomeBannerCard title="나눔게시판" img={share_board_img} link="/shareboard"/>
+          <HomeBannerCard title="룸메 찾아요" img={find_roommates_img} link="/roommatefindboard"/>
         </div>
 
         <div className="home-bottom">
@@ -70,10 +70,38 @@ function Home() {
                 <p className="plus-btn">+</p>
               </div>
               <ul className="board-content-box dorm-list">
-                <img onClick={()=>{window.open(url_e)}} className="board-content" alt="ehouse" src={e_house_img}/>
-                <img onClick={()=>{window.open(url_g)}} className="board-content" alt="ghouse" src={g_house_img}/>
-                <img onClick={()=>{window.open(url_k)}} className="board-content" alt="khouse" src={k_house_img}/>
-                <img onClick={()=>{window.open(url_c)}} className="board-content" alt="chouse" src={c_house_img}/>
+                <img
+                  onClick={() => {
+                    window.open(url_e);
+                  }}
+                  className="board-content"
+                  alt="ehouse"
+                  src={e_house_img}
+                />
+                <img
+                  onClick={() => {
+                    window.open(url_g);
+                  }}
+                  className="board-content"
+                  alt="ghouse"
+                  src={g_house_img}
+                />
+                <img
+                  onClick={() => {
+                    window.open(url_k);
+                  }}
+                  className="board-content"
+                  alt="khouse"
+                  src={k_house_img}
+                />
+                <img
+                  onClick={() => {
+                    window.open(url_c);
+                  }}
+                  className="board-content"
+                  alt="chouse"
+                  src={c_house_img}
+                />
               </ul>
             </div>
           </div>
@@ -84,5 +112,3 @@ function Home() {
 }
 
 export default Home;
-
-

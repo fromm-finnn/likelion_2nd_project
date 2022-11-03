@@ -23,13 +23,25 @@ function Menu(props) {
             <img className="menu-close" onClick={close} src={menu_close}></img>
           </section>
           <ul className="menu-list">
-            <li className="list-name">자유게시판</li>
-            <li className="list-name">정보게시판</li>
-            <li className="list-name">건의게시판</li>
-            <li className="list-name">공구게시판</li>
-            <li className="list-name">나눔게시판</li>
+            <li onClick={() => navigate("../freeboard")} className="list-name">
+              자유게시판
+            </li>
+            <li onClick={() => navigate("/infoboard")} className="list-name">
+              정보게시판
+            </li>
+            <li onClick={() => navigate("/suggboard")} className="list-name">
+              건의게시판
+            </li>
+            <li onClick={() => navigate("/groupboard")} className="list-name">
+              공구게시판
+            </li>
+            <li onClick={() => navigate("/shareboard")} className="list-name">
+              나눔게시판
+            </li>
             <img className="list-line" alt="listline" src={line} />
-            <li className="list-name">룸메 찾아요</li>
+            <li onClick={() => navigate("/roommatefind")} className="list-name">
+              룸메 찾아요
+            </li>
             <li className="list-name">공지사항</li>
             <li className="list-name">기숙사 식당</li>
             <li className="list-name">기숙사 정보</li>

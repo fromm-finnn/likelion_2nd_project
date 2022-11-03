@@ -16,8 +16,6 @@
 }
 
 .menu > section {
-  /* flex-flow: column wrap;
-  justify-content: flex-start; */
   width: 50%;
   max-width: 180px;
   background-color: #ffffff;
