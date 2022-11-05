@@ -1,12 +1,18 @@
 //routing
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./components/Main";
-import Board1 from "./components/board/FreeBoard";
-import Board2 from "./components/board/InfoBoard";
-import Board3 from "./components/board/SuggBoard";
-import Board4 from "./components/board/GroupBoard";
-import Board5 from "./components/board/ShareBoard";
-import Board6 from "./components/board/RoommateFind";
+import FreeBoard from "./components/board/list/FreeBoard";
+import FreeWriting from "./components/board/writing/FreeWriting";
+import InfoBoard from "./components/board/list/InfoBoard";
+import InfoWriting from "./components/board/writing/InfoWriting";
+import SuggBoard from "./components/board/list/SuggBoard";
+import SuggWriting from "./components/board/writing/SuggWriting";
+import GroupBoard from "./components/board/list/GroupBoard";
+import GroupWriting from "./components/board/writing/GroupWriting";
+import ShareBoard from "./components/board/list/ShareBoard";
+import ShareWriting from "./components/board/writing/ShareWriting";
+import RoommateFind from "./components/board/list/RoommateFind";
+import RoommateWriting from "./components/board/writing/RoommateWriting";
 import Chat from "./components/Chat";
 import Home from "./components/home/Home";
 import SignIn from "./components/signin/SignIn";
@@ -32,12 +38,18 @@ function App() {
           <Route path="/mypage" element={<MyPage />}></Route>
           <Route pathe="/mypageedit" element={<MyPageEdit />}></Route>
           <Route path="/home" element={<Home />}></Route>
-          <Route path="/freeboard" element={<Board1 />}></Route>
-          <Route path="/infoboard" element={<Board2 />}></Route>
-          <Route path="/suggboard" element={<Board3 />}></Route>
-          <Route path="/groupboard" element={<Board4 />}></Route>
-          <Route path="/shareboard" element={<Board5 />}></Route>
-          <Route path="/roommatefind" element={<Board6 />}></Route>
+          <Route path="/freeboard" element={<FreeBoard />}></Route>
+          <Route path="/freeboard/writing" element={<FreeWriting />}></Route>
+          <Route path="/infoboard" element={<InfoBoard />}></Route>
+          <Route path="/infoboard/writing" element={<InfoWriting />}></Route>
+          <Route path="/suggboard" element={<SuggBoard />}></Route>
+          <Route path="/suggboard/writing" element={<SuggWriting />}></Route>
+          <Route path="/groupboard" element={<GroupBoard />}></Route>
+          <Route path="/groupboard/writing" element={<GroupWriting />}></Route>
+          <Route path="/shareboard" element={<ShareBoard />}></Route>
+          <Route path="/shareboard/writing" element={<ShareWriting />}></Route>
+          <Route path="/roommatefind" element={<RoommateFind />}></Route>
+          <Route path="/roommatefind/writing" element={<RoommateWriting />}></Route>
           <Route path="/chat" element={<Chat />}></Route>
         </Routes>
       </BrowserRouter>
