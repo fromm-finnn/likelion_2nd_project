@@ -85,6 +85,10 @@
   margin-bottom: 16px;
 }
 
+.list-line {
+  margin-bottom: 16px;
+}
+
 .list-name{
   cursor: pointer;
 }

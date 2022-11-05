@@ -12,4 +12,8 @@ function MyPageEdit() {
   );
 }
 
+<<<<<<< HEAD
 export default MyPageEdit;
+=======
+export default MyPageEdit;
+>>>>>>> de603b1fdfbe25811ef5d8fa022b7075da26503e
