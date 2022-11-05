@@ -51,7 +51,7 @@
     cursor: pointer;
   }
 
-  .button{
+  .board-write-button{
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -73,7 +73,7 @@
     cursor: pointer;
   }
 
-  .write-btn {
+  .board-write-text {
     width: 100%;
     color: white;
     cursor: pointer;
@@ -85,11 +85,6 @@
     justify-content: space-between;
     margin-bottom: 24px;
   }
-  
-  .upper-card {
-    width: 100%;
-  }
-  
   
   .board-bottom {
     margin-top: 20px;
