@@ -56,9 +56,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'freeboard', #자유게시판 어플리케이션
     'rest_framework', #djangorestframework 사용
+    'api',
 ]
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
