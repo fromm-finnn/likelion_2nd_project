@@ -14,8 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from freeboard.views import FreeboardListAPI
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/freeboard/', FreeboardListAPI.as_view()),
+    #이건 로그인 관련
+    path('api/v1/skkutory/', include('skkutory.urls')),
 ]

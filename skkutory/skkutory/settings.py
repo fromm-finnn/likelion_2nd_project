@@ -56,13 +56,52 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'freeboard', #자유게시판 어플리케이션
     'rest_framework', #djangorestframework 사용
-    'api',
+    'corsheaders', #CORS문제 해결
+    #여기부터
+    'rest_framework.authtoken',
+    'rest_auth',
+    'rest_auth.registration',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    #여기까지 로그인 관련
 ]
 
+#여기부터
+AUTH_USER_MODEL = 'mall.CustomUser' #이거 나중에 skkutory 무언가로 바꾸기
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTHENTICATION_BACKENDS = (    
+	"django.contrib.auth.backends.ModelBackend",    
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_REQUIRED = True
+
+ACCOUNT_USERNAME_REQUIRED = False
+
+ACCOUNT_SESSION_REMEMBER = True
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+ACCOUNT_UNIQUE_EMAIL = True
+#여기까지도 로그인 관련
+
 REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    #여기부터
+    'DATETIME_FORMAT': "%m/%d/%Y %I:%M%P",
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    #여기까지도 로그인 관련
 }
 
 MIDDLEWARE = [
@@ -73,6 +112,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+#CORS_ORIGIN_WHITELIST에 등록된 url에서의 접근만 허용 가능, 즉 3000포트에서 오는 요청 처리 가능
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
 ]
 
 ROOT_URLCONF = 'skkutory.urls'
