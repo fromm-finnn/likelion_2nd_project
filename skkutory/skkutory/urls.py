@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from freeboard.views import FreeboardListAPI
+from freeboard import views
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/freeboard/', FreeboardListAPI.as_view()),
-    #이건 로그인 관련
-    path('api/v1/skkutory/', include('skkutory.urls')),
+    path('', views.index),
+    path('api/', include('freeboard.urls')),
+    path('api-auth/', include('rest_framework.urls')),
 ]

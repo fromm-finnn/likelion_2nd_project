@@ -64,31 +64,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
     #여기까지 로그인 관련
 ]
 
-#여기부터
-AUTH_USER_MODEL = 'mall.CustomUser' #이거 나중에 skkutory 무언가로 바꾸기
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-AUTHENTICATION_BACKENDS = (    
-	"django.contrib.auth.backends.ModelBackend",    
-    "allauth.account.auth_backends.AuthenticationBackend",
-)
-
-SITE_ID = 1
-
-ACCOUNT_EMAIL_REQUIRED = True
-
-ACCOUNT_USERNAME_REQUIRED = False
-
-ACCOUNT_SESSION_REMEMBER = True
-
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-
-ACCOUNT_UNIQUE_EMAIL = True
-#여기까지도 로그인 관련
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
@@ -96,12 +75,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
-    #여기부터
-    'DATETIME_FORMAT': "%m/%d/%Y %I:%M%P",
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-    ],
-    #여기까지도 로그인 관련
+    
 }
 
 MIDDLEWARE = [

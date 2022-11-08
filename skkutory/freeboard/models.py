@@ -1,11 +1,14 @@
 from django.db import models
 
+
 # Create your models here.
+
+
 
 
 class Freeboard(models.Model):
     title = models.CharField(max_length=70)
-    body = models.TextField()
+    content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

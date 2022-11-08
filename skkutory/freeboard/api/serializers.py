@@ -1,5 +1,7 @@
 from rest_framework import serializers
-from .models import Freeboard
+from ..models import Freeboard
+#로그인 관련
+
 
 class FreeboardSerializer(serializers.ModelSerializer) :
     class Meta :
