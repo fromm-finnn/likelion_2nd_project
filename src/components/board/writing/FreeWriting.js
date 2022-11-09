@@ -1,5 +1,6 @@
 import React from "react";
 import "../../../css/BoardWriting.css";
+import camera_icon from "../../../images/camera-icon.png";
 
 function FreeWriting() {
   return (
@@ -22,6 +23,7 @@ function FreeWriting() {
               type="text"
               placeholder="내용"
             />
+            <img className="camera-icon" src={camera_icon} />
           </div>
         </div>
 

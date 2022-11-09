@@ -1,9 +1,10 @@
 import React from "react";
 import '../../css/BoardList.css'
+import image_icon from "../../images/image-icon.png";
 
 export default function BoardList() {
-  const productList = {
-    products: [
+  const boardList = {
+    contents: [
       {
         title: "제목1",
         content: "내용1",
@@ -169,12 +170,15 @@ export default function BoardList() {
 
   return (
     <div className="board-card">
-      {productList.products.map((el, index) => {
+      {boardList.contents.map((el, index) => {
       return (
-        <div className="board-content-box" key={index}>
+        <div className="board-list-box" key={index}>
           <p className="board-list-title">{el.title}</p>
           <p className="board-list-content">{el.content}</p>
-          <p className="board-list-detail">{el.nickname} {el.time} 공감 {el.like} | 북마크 {el.bookmark}</p>
+          <div className="board-list-bottom">
+            <p className="board-list-detail">{el.nickname} {el.time} 공감 {el.like} | 북마크 {el.bookmark}</p>
+            <img className="board-image-icon" src={image_icon} />
+          </div>
         </div>
       )
     })}

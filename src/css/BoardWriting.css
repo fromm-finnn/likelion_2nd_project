@@ -13,7 +13,9 @@
     margin-left: auto;
     margin-right: auto;
     width: 380px;
+    height: 812px;
     padding: 16px;
+    padding-top: 18px;
     background-color: #f5f5f5;
   }
   
@@ -26,20 +28,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
+    width: 93%;
     height: 36px;
     background: rgba(255, 255, 255, 0.97);
     border: 1px solid #d8d8d8;
     border-radius: 5px;
     padding-left: 10px;
+    padding-right: 10px;
     margin-left:auto;
     margin-right:auto;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
   
   .writing-title-input {
     width: 100%;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 500;
     backface-visibility: hidden;
     border-style: none;
@@ -55,24 +58,31 @@
   .writing-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 95%;
+    flex-direction: column;
+    width: 93%;
     height:400px;
     background: rgba(255, 255, 255, 0.97);
     border: 1px solid #d8d8d8;
     border-radius: 5px;
     padding-left: 10px;
+    padding-right: 10px;
     margin-left:auto;
     margin-right:auto;
-    margin-bottom: 12px;
   }
   
   .writing-content-input {
     width: 100%;
-    font-size: 15px;
+    margin-top: 10px;
+    font-size: 10px;
     font-weight: 500;
     backface-visibility: hidden;
     border-style: none;
+  }
+
+  .camera-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 10px;
   }
   
   .writing-bottom {
