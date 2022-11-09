@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from freeboard import views
 
 
@@ -24,5 +24,7 @@ urlpatterns = [
     path('', views.index),
     path('api/', include('freeboard.urls')),
     #'api-auth' 를 통해 페이지 상단 로그인 로그아웃 기능을 사용할 수 있게 된다.
-    path('api-auth/', include('rest_framework.urls')),
+    #path('api-auth/', include('rest_framework.urls')),
+    path('rest-auth/', include('rest_auth.urls')),
+    path('rest-auth/registration/', include('rest_auth.registration.urls')),
 ]
