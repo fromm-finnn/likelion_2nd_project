@@ -1,11 +1,15 @@
 from django.shortcuts import render, HttpResponse
-from .api.serializers import FreeboardSerializer
+from .api.serializers import FreeboardSerializer, UserSerializer
+from django.contrib.auth.models import User
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
-#from rest_framework.views import APIView
+#from rest_framework.decorators import api_view
+from rest_framework.views import APIView
+#APIView : 공통적인 함수 재사용 가능, DRY정책 따르도록 하는 강력한 패턴을 제공
+from rest_framework import mixins, generics, permissions
 from .models import Freeboard
 from django.http import Http404
 from rest_framework import status
+from .permissions import IsOwnerOrReadOnly
 
 #DRF API view -> 두 종류의 wrapper 선택 가능.
 #1. 함수형 : @api_view 데코레이터 사용
@@ -14,8 +18,97 @@ from rest_framework import status
 #REST API 설계 시 반드시 지켜야 할 대원칙
 # 첫째, URL은 정보의 자원을 포함할 것.
 # 둘째, 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE)로 표현할 것
+class FreeboardList(generics.ListCreateAPIView):
+    queryset = Freeboard.objects.all()
+    serializer_class = FreeboardSerializer
+    #post요청 시 실행되는 perform_create라는 method를 오버라이딩함으로서 기본 create함수를 바꿔줄 수 있다.
+    # 즉, serializer.save(owner=self.request.user)를 통해 FreeboardSerializer속 field인 owner를 현재의 user로 채운 것!
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    # drf가 이용자 권한 설정 클래스를 제공한다
+    # 여기서는 IsAuthenticatedOrReadOnly이다. authenticated만 R이랑 C 둘 다 가능, 아니면 R만
+
+    def perform_create(self, serializer):
+        #post요청하면 perform_create() 오버라이딩
+        # instance save를 수정가능
+        serializer.save(owner = self.request.user)
+    
 
 
+class FreeboardDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Freeboard.objects.all()
+    serializer_class = FreeboardSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+
+class UserList(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class UserDetail(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+'''
+class FreeboardList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+    queryset =Freeboard.objects.all()
+    serializer_class = FreeboardSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+class FreeboardDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView):
+    queryset = Freeboard.objects.all()
+    serializer_class = FreeboardSerializer
+
+    def get(self, request, *args, **kwagrs):
+        return self.retrieve(request, *args, **kwagrs)
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
+'''
+
+
+'''
+class FreeboardList(APIView):
+    def get(self, request, format=None):
+        post = Freeboard.objects.all()
+        serializer = FreeboardSerializer(post, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        #POST요청할 때
+        serializer = FreeboardSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_201_CREATED)
+
+class FreeboardDetail(APIView):
+    def get_object(self, pk):
+        try:
+            return Freeboard.objects.get(pk=pk)
+        except Freeboard.DoesNotExist:
+            return Http404
+    def get(self, request, pk, format=None):
+        post = self.get_object(pk)
+        serializer = FreeboardSerializer(post)
+        return Response(serializer.data)
+    def put(self, request, pk, format=None):
+        post = self.get_object(pk)
+        serializer = FreeboardSerializer(post, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def delete(self, request, pk, format=None):
+        post = self.get_object(pk)
+        post.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+'''
+
+'''
 #api_view 데코레이터! -> @api_view(['method명']) 형식으로 사용
 @api_view(['GET', 'POST'])
 def FreeboardList(request):
@@ -46,42 +139,6 @@ def FreeboardList(request):
             return Response(serialzer.data, status = 201)
         return Response(serialzer.errors, status=404)
         #status의 정체는? DRF가 제공하는 HTTP상태코드. 에러 종류에 따라 더욱 명시적인 식별자를 제공
-
-@api_view(['GET', 'PUT', 'DELETE'])
-def FreeboardDetail(request, pk):
-    try:
-        freeboard = Freeboard.objects.get(pk=pk)
-    except Freeboard.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
-    #우선 pk에 해당하는 Freeboard가 존재하는지 체크, 없다면 404 에러를 띄운다.
-
-    #Detail
-    if request.method == "GET": #만약 FreeboardDetail함수로 GET요청이 왔다면 해당 freeboard에 대한 세부정보를 보여주도록
-        serializer = FreeboardSerializer(freeboard)
-        return Response(serializer.data)
-
-    #Update
-    elif request.method == "PUT": #PUT요청이 오면 request요청이 들어온 freeboard를 serializer에 담아 유효성검사 후 save
-        serializer = FreeboardSerializer(freeboard, data=request.data)
-        #request요청이 들어온 그 post를 serializer 틀에 담아 가져옴
-
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-    #Delete
-    elif request.method == "Delete": #DELETE요청이 오면 해당 freeboard 삭제
-        freeboard.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-'''
-class FreeboardListAPI(APIView):
-    def get(self, request):
-        queryset = Freeboard.objects.all()
-        print(queryset)
-        serializer = FreeboardSerializer(queryset, many=True)
-        return Response(serializer.data)
 '''
 
 def index(request):

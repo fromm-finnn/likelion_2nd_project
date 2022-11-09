@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     #여기까지 로그인 관련
 ]
 
+SITE_ID = 1
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
