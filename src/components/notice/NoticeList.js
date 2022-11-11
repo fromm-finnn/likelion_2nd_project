@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Pagination from "../Pagination";
 import "../../css/NoticeList.css";
 import image_icon from "../../images/image-icon.png";
 
@@ -109,12 +110,17 @@ function NoticeList() {
     ],
   };
 
+  const [contents, setContents] = useState([]);
+  const limit = 20;
+  const [page, setPage] = useState(1);
+  const offset = (page - 1) * limit;
+
   return (
     <>
       <div className="notice">
         <div className="notice-middle">
           <div className="notice-card">
-            {noticeList.contents.map((el, index) => {
+            {noticeList.contents.slice(offset, offset + limit).map((el, index) => {
              return (
               <div className="notice-list-box" key={index}>
                 <p className="notice-list-title">{el.title}</p>
@@ -126,10 +132,14 @@ function NoticeList() {
               )
             })}
           </div>
+          <Pagination
+          total={noticeList.contents.length}
+          limit={limit}
+          page={page}
+          setPage={setPage}
+        />
         </div>
-
-        <div className="notice-bottom">
-        </div>
+        <div className="notice-bottom"/>
       </div>
     </>
   );
