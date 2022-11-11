@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Pagination from "../Pagination";
 import "../../css/MyContent.css";
 import image_icon from "../../images/image-icon.png";
 
@@ -169,12 +170,17 @@ function Bookmark() {
     ],
   };
 
+  const [contents, setContents] = useState([]);
+  const limit = 20;
+  const [page, setPage] = useState(1);
+  const offset = (page - 1) * limit;
+
   return (
     <>
       <div className="content">
         <div className="content-middle">
           <div className="content-card">
-            {contentList.contents.map((el, index) => {
+            {contentList.contents.slice(offset, offset + limit).map((el, index) => {
              return (
               <div className="content-list-box" key={index}>
                 <p className="content-list-title">{el.title}</p>
@@ -187,10 +193,15 @@ function Bookmark() {
               )
             })}
           </div>
+          <Pagination
+          total={contentList.contents.length}
+          limit={limit}
+          page={page}
+          setPage={setPage}
+        />
         </div>
 
-        <div className="content-bottom">
-        </div>
+        <div className="content-bottom"/>
       </div>
     </>
   );
