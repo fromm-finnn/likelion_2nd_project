@@ -24,7 +24,6 @@ import Header from './components/Header';
 
 //css
 import "./App.css";
-import RestAPI from "./RestAPI.js";
 import React from "react";
 
 function App() {
