@@ -22,6 +22,15 @@
     margin-right: 8px;
   }
 
+  .board-list-last-box {
+    margin-top: 12px;
+    width: 95%;
+    text-align: left;
+    border: None;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
   .board-list-title {
     margin-top: 0;
     margin-bottom: 7px;

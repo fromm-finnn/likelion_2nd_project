@@ -47,6 +47,16 @@
     margin-right: 10px;
   }
 
+  .notice-list-last-box {
+    margin-top: 10px;
+    width: 95%;
+    text-align: left;
+    border: None;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+
   .notice-list-title {
     margin-top: 12px;
     margin-bottom: 16px;

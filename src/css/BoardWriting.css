@@ -72,6 +72,9 @@
   
   .writing-content-input {
     width: 100%;
+    height: 100%;
+    white-space: normal;
+    display: flex;
     margin-top: 10px;
     font-size: 10px;
     font-weight: 500;
