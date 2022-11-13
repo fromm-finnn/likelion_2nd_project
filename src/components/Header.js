@@ -4,7 +4,7 @@ import "../css/Header.css";
 import Menu from "./Menu";
 import menu_img from "../images/menu.svg";
 import user_img from "../images/user.svg";
-import ginkgo from "../images/ginkgo-leaf.png";
+import logo from "../images/logo.svg";
 
 function Header(props) {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ function Header(props) {
             onClick={() => navigate("/")}
             className="header-logo"
             alt="header-logo"
-            src={ginkgo}
+            src={logo}
           />
           <Menu open={modalOpen} close={closeModal} />
           <img
