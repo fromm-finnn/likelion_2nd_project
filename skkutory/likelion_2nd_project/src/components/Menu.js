@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Menu.css";
 import menu_close from "../images/menu-close.png";
-import ginkgo from "../images/ginkgo-leaf.png";
+import logo from "../images/logo.svg";
 import line from "../images/line.svg";
 
 function Menu(props) {
   const navigate = useNavigate();
   const { open, close } = props;
+  const url_bong = "https://dorm.skku.edu/dorm_suwon/";
+  const url_myung = "https://dorm.skku.edu/dorm_seoul/";
 
   return (
     <div className={open ? "openMenu menu" : "menu"}>
@@ -18,7 +20,7 @@ function Menu(props) {
               onClick={() => navigate("/")}
               className="menu-logo"
               alt="logo"
-              src={ginkgo}
+              src={logo}
             ></img>
             <img className="menu-close" onClick={close} src={menu_close}></img>
           </section>
@@ -42,7 +44,9 @@ function Menu(props) {
               룸메 찾아요
             </li>
             <img className="list-line" alt="listline" src={line} />
-            <li className="list-name">공지사항</li>
+            <li onClick={() => navigate("/notice")} className="list-name">
+              공지사항
+            </li>
             <li className="list-name">기숙사 식당</li>
             <li className="list-name">기숙사 정보</li>
             <img className="list-line" alt="listline" src={line} />
@@ -50,8 +54,20 @@ function Menu(props) {
               마이페이지
             </li>
             <img className="list-line" alt="listline" src={line} />
-            <li className="list-name">봉룡학사 홈페이지</li>
-            <li className="list-name">명륜학사 홈페이지</li>
+            <li
+              className="list-name"
+              onClick={() => {
+                window.open(url_bong);
+              }}
+            >
+              봉룡학사 홈페이지
+            </li>
+            <li
+              className="list-name"
+              onClick={() => {
+                window.open(url_myung);
+              }}
+            >명륜학사 홈페이지</li>
           </ul>
         </section>
       ) : null}

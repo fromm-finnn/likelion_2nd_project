@@ -1,11 +1,13 @@
 import React from "react";
 import "../../css/HomeBoardCard.css";
+import { useNavigate } from "react-router-dom";
 
 function HomeBoardCard(props) {
+  const navigate = useNavigate();
   return (
     <div className="home-board-card">
       <div className="board-title-box">
-        <p className="board-title">{props.title}</p>
+        <p className="board-title" onClick={() => navigate(props.link)}>{props.title}</p>
         <p className="board-subtitle">{props.subtitle}</p>
         <p className="plus-btn">+</p>
       </div>

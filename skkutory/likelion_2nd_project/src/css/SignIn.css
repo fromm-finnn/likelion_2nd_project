@@ -6,6 +6,10 @@
 *{
   font-family: "Pretendatd-Regular";
 }
+.logo{
+  height: 20%;
+  width: 20%;
+}
 
 .sign-in{
   height: 800px;

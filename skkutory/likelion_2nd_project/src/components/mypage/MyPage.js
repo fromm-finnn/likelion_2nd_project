@@ -47,11 +47,19 @@ function MyPage() {
           </div>
         </div>
         <div className="my-page-banner">
-          <HomeBannerCard title="내가 쓴 글" img={free_board_img} />
-          <HomeBannerCard title="내가 쓴 댓글" img={comment_img} />
-          <HomeBannerCard title="북마크" img={bookmark_img} />
+          <HomeBannerCard
+            title="내가 쓴 글"
+            img={free_board_img}
+            link="/mypost"
+          />
+          <HomeBannerCard
+            title="내가 쓴 댓글"
+            img={comment_img}
+            link="/mycommnet"
+          />
+          <HomeBannerCard title="북마크" img={bookmark_img} link="/bookmark" />
         </div>
-        <div className="my-chat-box">
+        <div className="my-chat-box" onClick={() => navigate("/chat")}>
           <span className="my-chat">내가 참여한 채팅</span>
           <img className="chat-img" alt="chat-image" src={chat_img}></img>
         </div>

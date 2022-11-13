@@ -15,6 +15,10 @@ function SignUp() {
             <input className="sign-up-name" type="text" />
           </div>
           <div className="input-content">
+            <span className="input-title">아이디</span>
+            <input className="sign-up-name" type="text" />
+          </div>
+          <div className="input-content">
             <span className="input-title">비밀번호</span>
             <input className="sign-up-name" type="text" />
           </div>

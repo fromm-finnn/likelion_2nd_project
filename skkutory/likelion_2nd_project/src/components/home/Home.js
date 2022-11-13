@@ -43,7 +43,7 @@ function Home() {
         </div>
         <div className="home-middle">
           <div className="upper-card">
-            <HomeBoardCard title="공지사항" />
+            <HomeBoardCard title="공지사항" link="/notice"/>
           </div>
           <div className="upper-card">
             <HomeBoardCard title="기숙사 식당" subtitle="E하우스" />

@@ -58,10 +58,10 @@
 }
 
 .menu-logo{
-  margin-top: 5px;
+  margin-top: 10%;
   object-fit:contain;
   width: 50%;
-  height: 75%;
+  height: 50%;
   cursor: pointer;
 }
 
