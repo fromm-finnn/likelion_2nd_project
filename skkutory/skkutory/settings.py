@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     #여기까지 로그인 관련
+    'webpack_loader',
 ]
 
 SITE_ID = 1
@@ -100,7 +101,7 @@ ROOT_URLCONF = 'skkutory.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "likelion_2nd_project/build"),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,6 +113,13 @@ TEMPLATES = [
         },
     },
 ]
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+            'BUNDLE_DIR_NAME': 'bundles/',
+            'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.dev.json'),
+        }
+}
 
 WSGI_APPLICATION = 'skkutory.wsgi.application'
 
@@ -167,3 +175,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR , 'likelion_2nd_project/build/static')
+]

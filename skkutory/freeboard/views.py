@@ -11,6 +11,7 @@ from django.http import Http404
 from rest_framework import status
 from .permissions import IsOwnerOrReadOnly
 
+
 #DRF API view -> 두 종류의 wrapper 선택 가능.
 #1. 함수형 : @api_view 데코레이터 사용
 #2. 클래스형 : APIView 클래스 상속
@@ -140,6 +141,7 @@ def FreeboardList(request):
         return Response(serialzer.errors, status=404)
         #status의 정체는? DRF가 제공하는 HTTP상태코드. 에러 종류에 따라 더욱 명시적인 식별자를 제공
 '''
+
 
 def index(request):
     return HttpResponse('Welcome to Lonely Backend Side!')

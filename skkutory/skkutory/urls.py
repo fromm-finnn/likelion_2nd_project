@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from freeboard import views
+from django.views.generic import TemplateView
 
 
 

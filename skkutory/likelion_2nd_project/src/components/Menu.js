@@ -38,10 +38,10 @@ function Menu(props) {
             <li onClick={() => navigate("/shareboard")} className="list-name">
               나눔게시판
             </li>
-            <img className="list-line" alt="listline" src={line} />
             <li onClick={() => navigate("/roommatefind")} className="list-name">
               룸메 찾아요
             </li>
+            <img className="list-line" alt="listline" src={line} />
             <li className="list-name">공지사항</li>
             <li className="list-name">기숙사 식당</li>
             <li className="list-name">기숙사 정보</li>

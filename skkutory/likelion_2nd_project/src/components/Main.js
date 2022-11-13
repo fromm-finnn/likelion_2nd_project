@@ -32,6 +32,18 @@ function Main() {
         <Link to="/roommatefind">
           <p>RoommateFind</p>
         </Link>
+        <Link to="/notice">
+          <p>Notice</p>
+        </Link>
+        <Link to="/mypost">
+          <p>MyPost</p>
+        </Link>
+        <Link to="/mycomment">
+          <p>MyComment</p>
+        </Link>
+        <Link to="/bookmark">
+          <p>Bookmark</p>
+        </Link>
         <Link to="/chat">
           <p>Chat</p>
         </Link>
